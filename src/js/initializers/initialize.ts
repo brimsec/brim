@@ -1,9 +1,9 @@
-import initDOM from "./initDOM"
-import initGlobals from "./initGlobals"
-import initIpcListeners from "./initIpcListeners"
-import initMenuActionListeners from "./initMenuActionListeners"
-import initStore from "./initStore"
-import initWorkspaceParams from "./initWorkspaceParams"
+import initDOM from "./init-dom"
+import initGlobals from "./init-globals"
+import initIpcListeners from "./init-ipc-listeners"
+import initMenuActionListeners from "./init-menu-action-listeners"
+import initStore from "./init-store"
+import initWorkspaceParams from "./init-workspace-params"
 
 export default async function initialize() {
   const store = await initStore()

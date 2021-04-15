@@ -4,7 +4,7 @@ import {BarRounded} from "@vx/shape"
 import {AxisLeft, AxisBottom} from "@vx/axis"
 import {scaleLinear, scaleBand} from "@vx/scale"
 import {Group} from "@vx/group"
-import {cssVar} from "src/js/lib/cssVar"
+import {cssVar} from "src/js/lib/css-var"
 import styled from "styled-components"
 
 type Props = {

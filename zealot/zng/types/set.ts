@@ -1,6 +1,6 @@
 import {constructType} from "../construct"
 import * as zjson from "../../zjson"
-import {Type, ZngClass} from "../ts_types"
+import {Type, ZngClass} from "../ts-types"
 
 export class Set implements ZngClass<Type[] | null> {
   constructor(

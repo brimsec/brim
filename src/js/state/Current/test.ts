@@ -1,7 +1,7 @@
 import tabHistory from "app/router/tab-history"
 import {lakePath, workspacePath} from "app/router/utils/paths"
 import fixtures from "../../test/fixtures"
-import initTestStore from "../../test/initTestStore"
+import initTestStore from "../../test/init-test-store"
 import Spaces from "../Spaces"
 import Workspaces from "../Workspaces"
 import {Workspace} from "../Workspaces/types"

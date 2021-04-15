@@ -3,10 +3,10 @@ import React from "react"
 
 import {Center, Left, PaneHeader, PaneTitle, Right} from "../Pane"
 import Current from "../../state/Current"
-import HistoryButtons from "../common/HistoryButtons"
+import HistoryButtons from "../common/history-buttons"
 import LogDetails from "../../state/LogDetails"
 import DetailPane from "app/detail/Pane"
-import usePackets from "app/toolbar/hooks/usePackets"
+import usePackets from "app/toolbar/hooks/use-packets"
 import ToolbarAction from "app/toolbar/action-button"
 
 export default function LogDetailsWindow() {

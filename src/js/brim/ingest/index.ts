@@ -1,5 +1,5 @@
-import detectFileTypes from "./detectFileTypes"
-import getParams from "./getParams"
+import detectFileTypes from "./detect-file-types"
+import getParams from "./get-params"
 
 export default {
   getParams,

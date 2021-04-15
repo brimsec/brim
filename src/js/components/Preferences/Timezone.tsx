@@ -1,8 +1,8 @@
 import React from "react"
 
 import {FormFieldConfig} from "../../brim/form"
-import InputLabel from "../common/forms/InputLabel"
-import SelectInput from "../common/forms/SelectInput"
+import InputLabel from "../common/forms/input-label"
+import SelectInput from "../common/forms/select-input"
 import brim from "../../brim"
 
 type Props = {config: FormFieldConfig}

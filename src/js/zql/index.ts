@@ -1,4 +1,4 @@
-import {toZql} from "./toZql"
+import {toZql} from "./to-zql"
 
 export default function zql(strings, ...vars) {
   let result = ""

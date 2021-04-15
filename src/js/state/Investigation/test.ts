@@ -1,6 +1,6 @@
 import Investigation from "./"
 import brim from "../../brim"
-import createGlobalStore from "../createGlobalStore"
+import createGlobalStore from "../create-global-store"
 import {SearchRecord} from "src/js/types"
 
 let store

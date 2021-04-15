@@ -1,5 +1,5 @@
 import Spaces from "./"
-import initTestStore from "../../test/initTestStore"
+import initTestStore from "../../test/init-test-store"
 import {Space} from "./types"
 
 let store

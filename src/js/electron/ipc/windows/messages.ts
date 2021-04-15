@@ -1,6 +1,6 @@
 import {State} from "../../../state/types"
 import {WindowParams} from "../../tron/window"
-import {WindowName} from "../../tron/windowManager"
+import {WindowName} from "../../tron/window-manager"
 import {
   WindowsAuthCallbackMsg,
   WindowsInitialStateMsg,

@@ -1,8 +1,8 @@
 import React, {MouseEvent, useLayoutEffect, useRef, useState} from "react"
 import {SectionData} from "../models/Section"
 import Controller from "../models/Controller"
-import useDrag, {DragArgs} from "../hooks/useDrag"
-import useResizeObserver from "../hooks/useResizeObserver"
+import useDrag, {DragArgs} from "../hooks/use-drag"
+import useResizeObserver from "../hooks/use-resize-observer"
 import {Provided} from "../types"
 
 type Props = {

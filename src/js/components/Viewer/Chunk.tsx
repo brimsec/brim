@@ -2,7 +2,7 @@ import React from "react"
 
 import {RowRenderer, ViewerDimens} from "../../types"
 import * as Styler from "./Styler"
-import TableColumns from "../../models/TableColumns"
+import TableColumns from "../../models/table-columns"
 import {zng} from "zealot"
 
 type Props = {

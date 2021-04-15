@@ -4,7 +4,7 @@ import log from "electron-log"
 import {app} from "electron"
 import path from "path"
 
-import {SessionState} from "./formatSessionState"
+import {SessionState} from "./format-session-state"
 import {isNumber} from "../../lib/is"
 import lib from "../../lib"
 import tron from "./"

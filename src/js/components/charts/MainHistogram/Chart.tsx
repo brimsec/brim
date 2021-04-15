@@ -1,8 +1,8 @@
 import React from "react"
 
-import ChartSVG from "../ChartSVG"
+import ChartSVG from "../chart-svg"
 import Dimens from "../../Dimens"
-import useMainHistogram from "./useMainHistogram"
+import useMainHistogram from "./use-main-histogram"
 
 export default function MainHistogramChart() {
   return (

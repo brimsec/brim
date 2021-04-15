@@ -1,4 +1,4 @@
-import useSearch from "app/core/hooks/useSearch"
+import useSearch from "app/core/hooks/use-search"
 import {TileFormat} from "ppl/summary/summary"
 import React, {forwardRef} from "react"
 import {useSelector} from "react-redux"

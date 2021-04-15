@@ -1,6 +1,6 @@
 import {ZealotPayload} from "../types"
 import * as zqd from "../zqd"
-import {createRecordsCallback, RecordsCallbackArgs} from "./records_callback"
+import {createRecordsCallback, RecordsCallbackArgs} from "./records-callback"
 
 export function createCallbacks() {
   const callbacks = new Map()

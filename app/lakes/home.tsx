@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import styled from "styled-components"
-import BrimTextLogo from "../../src/js/components/BrimTextLogo"
-import electronIsDev from "../../src/js/electron/isDev"
+import BrimTextLogo from "../../src/js/components/brim-text-logo"
+import electronIsDev from "../../src/js/electron/is-dev"
 import TabImport from "./import"
 import TabCreateSpace from "./new"
 

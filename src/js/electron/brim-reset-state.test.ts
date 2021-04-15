@@ -2,7 +2,7 @@ import {app} from "electron"
 import {ZQD} from "ppl/zqd/zqd"
 import {Brim} from "./brim"
 import tron from "./tron"
-import windowManager from "./tron/windowManager"
+import windowManager from "./tron/window-manager"
 
 function mockZqd() {
   const zqd = new ZQD("test", "srun", "supdate", "zrun")

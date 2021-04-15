@@ -1,1 +1,1 @@
-export {TreeList} from "./components/TreeList"
+export {TreeList} from "./components/tree-list"

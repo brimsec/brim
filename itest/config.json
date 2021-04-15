@@ -1,7 +1,7 @@
 {
   "bail": 10,
   "collectCoverageFrom": ["**/*.ts", "!**/test/**"],
-  "globalSetup": "<rootDir>/globalSetup.ts",
+  "globalSetup": "<rootDir>/global-setup.ts",
   "reporters": ["default", "jest-junit"],
   "setupFiles": ["<rootDir>/setup.ts"],
   "setupFilesAfterEnv": ["<rootDir>/setup-after-env.ts"],

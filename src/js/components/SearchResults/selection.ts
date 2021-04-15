@@ -4,7 +4,7 @@ import {useLayoutEffect, MouseEvent} from "react"
 import Mousetrap from "mousetrap"
 
 import Viewer from "../../state/Viewer"
-import useCallbackRef from "../hooks/useCallbackRef"
+import useCallbackRef from "../hooks/use-callback-ref"
 
 function useKeybindings(multi) {
   const dispatch = useDispatch()

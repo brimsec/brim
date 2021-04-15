@@ -1,7 +1,7 @@
 import {basename} from "path"
 
 import appStep from "../lib/appStep/api"
-import newAppInstance from "../lib/newAppInstance"
+import newAppInstance from "../lib/new-app-instance"
 import {retryUntil} from "../lib/control"
 import {handleError} from "../lib/jest"
 import {selectors} from "../../src/js/test/integration"

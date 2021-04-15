@@ -1,7 +1,7 @@
 import {createColumn} from "./models/column"
 import Columns from "./"
 import actions from "./actions"
-import initTestStore from "../../test/initTestStore"
+import initTestStore from "../../test/init-test-store"
 import touch from "./touch"
 import {zng} from "zealot"
 

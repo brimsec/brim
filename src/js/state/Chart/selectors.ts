@@ -1,5 +1,5 @@
 import {TabState} from "../Tab/types"
-import activeTabSelect from "../Tab/activeTabSelect"
+import activeTabSelect from "../Tab/active-tab-select"
 
 export default {
   getData: activeTabSelect((tab: TabState) => tab.chart.data),

@@ -1,5 +1,5 @@
 import {NOTICE_CLEAR, NOTICE_DISMISS, NOTICE_SET} from "./types"
-import AppError from "../../models/AppError"
+import AppError from "../../models/app-error"
 
 export default {
   set: (error: any): NOTICE_SET => ({

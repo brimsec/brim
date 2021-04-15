@@ -2,12 +2,12 @@ import {useSelector} from "react-redux"
 import React, {useMemo} from "react"
 
 import {ViewerDimens} from "../../types"
-import HeaderCell from "./HeaderCell"
+import HeaderCell from "./header-cell"
 import SearchBar from "../../state/SearchBar"
 import * as Styler from "./Styler"
-import TableColumns from "../../models/TableColumns"
+import TableColumns from "../../models/table-columns"
 import brim from "../../brim"
-import columnKey from "../../lib/columnKey"
+import columnKey from "../../lib/column-key"
 
 type Props = {
   dimens: ViewerDimens

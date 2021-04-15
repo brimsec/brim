@@ -4,9 +4,9 @@ import path from "path"
 
 import {LOG} from "../lib/log"
 import appStep from "../lib/appStep/api"
-import {pcapsDir} from "../lib/appStep/api/savePcap"
+import {pcapsDir} from "../lib/appStep/api/save-pcap"
 import {runSearch} from "../lib/appStep/api/search"
-import newAppInstance from "../lib/newAppInstance"
+import newAppInstance from "../lib/new-app-instance"
 import {selectors} from "../../src/js/test/integration"
 import {handleError} from "../lib/jest"
 

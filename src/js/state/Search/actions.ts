@@ -1,4 +1,4 @@
-import {DateTuple} from "../../lib/TimeWindow"
+import {DateTuple} from "../../lib/time-window"
 import {
   SEARCH_CLEAR,
   SEARCH_SPAN_ARGS_SET,

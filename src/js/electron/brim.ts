@@ -10,18 +10,18 @@ import {
   toAccessTokenKey,
   toRefreshTokenKey
 } from "../auth0/utils"
-import createGlobalStore from "../state/createGlobalStore"
-import {getGlobalPersistable} from "../state/getPersistable"
+import createGlobalStore from "../state/create-global-store"
+import {getGlobalPersistable} from "../state/get-persistable"
 import Prefs from "../state/Prefs"
 import Workspaces from "../state/Workspaces"
 import {installExtensions} from "./extensions"
 import ipc from "./ipc"
-import sendTo from "./ipc/sendTo"
-import isDev from "./isDev"
+import sendTo from "./ipc/send-to"
+import isDev from "./is-dev"
 import tron, {Session} from "./tron"
-import formatSessionState from "./tron/formatSessionState"
+import formatSessionState from "./tron/format-session-state"
 import {sessionStateFile} from "./tron/session"
-import windowManager, {$WindowManager} from "./tron/windowManager"
+import windowManager, {$WindowManager} from "./tron/window-manager"
 
 type QuitOpts = {
   saveSession?: boolean

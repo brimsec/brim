@@ -1,6 +1,6 @@
 import {parse} from "./parse"
-import {NEW_LINE, pipeJson} from "./pipe_json"
-import {pipeText} from "./pipe_text"
+import {NEW_LINE, pipeJson} from "./pipe-json"
+import {pipeText} from "./pipe-text"
 
 export async function* eachLine(readable: ReadableStream<Uint8Array> | null) {
   for await (let json of pipeJson(pipeText(readable))) {

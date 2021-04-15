@@ -9,7 +9,7 @@ import SearchBar from "../../../state/SearchBar"
 import Spaces from "../../../state/Spaces"
 import Workspaces from "../../../state/Workspaces"
 import fixtures from "../../../test/fixtures"
-import initTestStore from "../../../test/initTestStore"
+import initTestStore from "../../../test/init-test-store"
 import responses from "../../../test/responses"
 import {submitSearch} from "../mod"
 

@@ -1,5 +1,5 @@
 import {SearchResponse} from "./response"
-import whenIdle from "../../lib/whenIdle"
+import whenIdle from "../../lib/when-idle"
 
 function abortError(e) {
   return /user aborted/i.test(e.message)

@@ -9,7 +9,7 @@ import {
 } from "../../flows/searchBar/actions"
 import {submitSearch} from "../../flows/submitSearch/mod"
 import fixtures from "../../test/fixtures"
-import initTestStore from "../../test/initTestStore"
+import initTestStore from "../../test/init-test-store"
 import Url from "../Url"
 import Search from "../Search"
 import {SpanArgs} from "../Search/types"

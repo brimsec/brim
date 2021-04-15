@@ -1,5 +1,5 @@
 import React, {memo, ReactNode} from "react"
-import InlineTableLoading from "src/js/components/InlineTableLoading"
+import InlineTableLoading from "src/js/components/inline-table-loading"
 import styled from "styled-components"
 import {ChartWrap} from "./Shared"
 

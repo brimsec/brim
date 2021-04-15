@@ -2,16 +2,16 @@ import {useDispatch, useSelector} from "react-redux"
 import React, {MouseEvent} from "react"
 import styled from "styled-components"
 
-import {XLeftPaneExpander} from "./LeftPaneExpander"
-import WorkspacePicker from "../WorkspacePicker"
+import {XLeftPaneExpander} from "./left-pane-expander"
+import WorkspacePicker from "../workspace-picker"
 import Current from "../../state/Current"
 import Layout from "../../state/Layout"
 import Pane from "./../Pane"
 import get from "lodash/get"
 import {Sectional} from "../../../pkg/sectional"
-import HistorySection from "./HistorySection"
-import SpacesSection from "./SpacesSection"
-import QueriesSection from "./QueriesSection"
+import HistorySection from "./history-section"
+import SpacesSection from "./spaces-section"
+import QueriesSection from "./queries-section"
 
 const EmptyText = styled.div`
   ${(p) => p.theme.typography.labelNormal}

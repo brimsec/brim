@@ -1,6 +1,6 @@
 import {last} from "lodash"
 import {zng} from "zealot"
-import loginTo from "src/js/test/helpers/loginTo"
+import loginTo from "src/js/test/helpers/login-to"
 import {fetchCorrelation} from "./fetch"
 import * as stubs from "./stubs"
 

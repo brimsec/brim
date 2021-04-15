@@ -1,5 +1,5 @@
 import tron from "src/js/electron/tron"
-import getTestState from "./getTestState"
+import getTestState from "./get-test-state"
 
 export async function migrate({state: name, to}): Promise<any> {
   const state = getTestState(name)

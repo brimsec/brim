@@ -7,7 +7,7 @@ import {
 import {BrimWorkspace} from "../../brim"
 import ipc from "../../electron/ipc"
 import invoke from "../../electron/ipc/invoke"
-import {getAuth0} from "./getAuth0"
+import {getAuth0} from "./get-auth-0"
 
 export const login = (ws: BrimWorkspace, abortSignal: AbortSignal) => (
   dispatch

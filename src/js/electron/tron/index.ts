@@ -1,7 +1,7 @@
 import migrations from "./migrations"
 import session from "./session"
 import window from "./window"
-import windowManager from "./windowManager"
+import windowManager from "./window-manager"
 
 export type Session = ReturnType<typeof session>
 

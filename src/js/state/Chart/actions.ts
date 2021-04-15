@@ -1,7 +1,7 @@
 import {ChartData, CHART_CLEAR, CHART_RECORDS, CHART_STATUS} from "./types"
 import {SearchStatus} from "../../types/searches"
-import MergeHash from "../../models/MergeHash"
-import UniqArray from "../../models/UniqArray"
+import MergeHash from "../../models/merge-hash"
+import UniqArray from "../../models/uniq-array"
 import {zng} from "zealot"
 
 export default {

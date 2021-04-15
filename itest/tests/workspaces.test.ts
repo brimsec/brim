@@ -1,4 +1,4 @@
-import createTestBrim from "itest/lib/createTestBrim"
+import createTestBrim from "itest/lib/create-test-brim"
 
 describe("Workspace routes", () => {
   const brim = createTestBrim("workspaces.test")

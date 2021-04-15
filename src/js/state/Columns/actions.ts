@@ -5,7 +5,7 @@ import {
   ColumnUpdates
 } from "./types"
 import {Column} from "../../types"
-import columnKey from "../../lib/columnKey"
+import columnKey from "../../lib/column-key"
 
 function updateColumns(
   tableId: string,

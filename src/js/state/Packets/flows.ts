@@ -6,7 +6,7 @@ import {saveToFile} from "../../lib/response"
 import Current from "../Current"
 import Packets from "../Packets"
 import View from "../View"
-import {getZealot} from "../../flows/getZealot"
+import {getZealot} from "../../flows/get-zealot"
 import {zng} from "zealot"
 
 export default {

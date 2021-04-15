@@ -1,6 +1,6 @@
 import moment from "moment"
 
-import {DateTuple} from "../lib/TimeWindow"
+import {DateTuple} from "../lib/time-window"
 import {SpanArgs, TimeArg} from "../state/Search/types"
 import {isString} from "../lib/is"
 import brim, {Span, Ts} from "./"

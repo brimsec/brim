@@ -2,7 +2,7 @@ import {BrowserWindow, Menu, MenuItemConstructorOptions} from "electron"
 import {Brim} from "../brim"
 
 import actions from "./actions"
-import appMenu from "./appMenu"
+import appMenu from "./app-menu"
 
 export type $MenuItem = MenuItemConstructorOptions
 export type $Menu = $MenuItem[]

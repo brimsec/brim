@@ -1,7 +1,7 @@
 import {ChartData} from "../../../state/Chart/types"
-import {DateTuple} from "../../../lib/TimeWindow"
+import {DateTuple} from "../../../lib/time-window"
 import {HistogramData} from "../../charts/types"
-import histogramInterval from "../../../lib/histogramInterval"
+import histogramInterval from "../../../lib/histogram-interval"
 
 export type HistogramDataPoint = {
   ts: Date

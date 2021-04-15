@@ -1,4 +1,4 @@
-import initTestStore from "src/js/test/initTestStore"
+import initTestStore from "src/js/test/init-test-store"
 import Boards from "./index"
 
 let d, s

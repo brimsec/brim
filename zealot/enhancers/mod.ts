@@ -1,1 +1,1 @@
-export * from "./zngToZeek"
+export * from "./zng-to-zeek"

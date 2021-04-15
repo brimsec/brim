@@ -1,5 +1,5 @@
 import * as zjson from "../../zjson"
-import {ZngClass} from "../ts_types"
+import {ZngClass} from "../ts-types"
 
 export class Primitive implements ZngClass<null | string> {
   constructor(readonly type: zjson.Primitive, readonly value: string | null) {}

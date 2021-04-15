@@ -1,5 +1,5 @@
-import logsIngest from "./logsIngest"
-import pcapIngest from "./pcapIngest"
+import logsIngest from "./logs-ingest"
+import pcapIngest from "./pcap-ingest"
 
 export default {
   pcapIngest,

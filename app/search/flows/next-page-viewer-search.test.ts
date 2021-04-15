@@ -8,7 +8,7 @@ import Tabs from "src/js/state/Tabs"
 import Viewer from "src/js/state/Viewer"
 import Workspaces from "src/js/state/Workspaces"
 import fixtures from "src/js/test/fixtures"
-import initTestStore from "src/js/test/initTestStore"
+import initTestStore from "src/js/test/init-test-store"
 import {createZealotMock, zng} from "zealot"
 import nextPageViewerSearch from "./next-page-viewer-search"
 

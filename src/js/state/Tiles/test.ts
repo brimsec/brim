@@ -1,4 +1,4 @@
-import initTestStore from "src/js/test/initTestStore"
+import initTestStore from "src/js/test/init-test-store"
 import Tiles, {Tile} from "./index"
 
 let s, d

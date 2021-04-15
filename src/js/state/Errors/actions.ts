@@ -1,5 +1,5 @@
 import {ERRORS_CLEAR, ERROR_CREATE} from "./types"
-import AppError from "../../models/AppError"
+import AppError from "../../models/app-error"
 
 export default {
   createError: (err: any): ERROR_CREATE => ({

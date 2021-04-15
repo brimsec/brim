@@ -7,7 +7,7 @@ import {join, resolve} from "path"
 import {spawn, ChildProcess} from "child_process"
 
 import * as cmd from "src/js/stdlib/cmd"
-import electronIsDev from "src/js/electron/isDev"
+import electronIsDev from "src/js/electron/is-dev"
 
 // Paths for the zqd and zeek programs. If the app has been built as a release then it will be contained in an asar archive
 // but the zdeps will have been included in the .unpacked directory along side the archived app, hence the replace here. This

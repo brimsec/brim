@@ -10,7 +10,7 @@ import {retryUntil} from "../lib/control"
 import {nodeZedDistDir} from "../lib/env"
 import {handleError} from "../lib/jest"
 import appStep from "../lib/appStep/api"
-import newAppInstance from "../lib/newAppInstance"
+import newAppInstance from "../lib/new-app-instance"
 
 describe("Lake tests", () => {
   let app

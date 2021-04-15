@@ -1,6 +1,6 @@
 import Tabs from "../Tabs"
 import Viewer from "../Viewer"
-import initTestStore from "../../test/initTestStore"
+import initTestStore from "../../test/init-test-store"
 import {zng} from "zealot"
 
 let store

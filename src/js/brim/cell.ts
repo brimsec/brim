@@ -1,7 +1,7 @@
 import {zng} from "zealot"
 
-import {createComplexCell} from "./complexCell"
-import {createPrimitiveCell} from "./primitiveCell"
+import {createComplexCell} from "./complex-cell"
+import {createPrimitiveCell} from "./primitive-cell"
 
 export interface Cell {
   name: string

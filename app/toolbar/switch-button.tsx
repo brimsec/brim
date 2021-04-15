@@ -1,4 +1,4 @@
-import useLayoutUpdate from "app/core/hooks/useLayoutUpdate"
+import useLayoutUpdate from "app/core/hooks/use-layout-update"
 import React, {useLayoutEffect, useRef, useState} from "react"
 import styled from "styled-components"
 

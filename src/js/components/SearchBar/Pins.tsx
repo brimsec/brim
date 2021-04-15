@@ -2,8 +2,8 @@ import React, {useState} from "react"
 import {useDispatch, useSelector} from "react-redux"
 import {submitSearch} from "src/js/flows/submitSearch/mod"
 import SearchBar from "../../state/SearchBar"
-import FilterNode from "../FilterNode"
-import PinEdit from "./PinEdit"
+import FilterNode from "../filter-node"
+import PinEdit from "./pin-edit"
 
 function Pin({index, value}) {
   const dispatch = useDispatch()

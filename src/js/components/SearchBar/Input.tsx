@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux"
 import React, {useRef} from "react"
 import styled from "styled-components"
 
-import {cssVar} from "../../lib/cssVar"
+import {cssVar} from "../../lib/css-var"
 import {reactElementProps} from "../../test/integration"
 import {submitSearch} from "../../flows/submitSearch/mod"
 import SearchBar from "../../state/SearchBar"

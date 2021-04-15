@@ -1,5 +1,5 @@
 import * as zjson from "../zjson"
-import {Type} from "./ts_types"
+import {Type} from "./ts-types"
 import {Record} from "./types/record"
 import {Primitive} from "./types/primitive"
 import {ZArray} from "./types/array"

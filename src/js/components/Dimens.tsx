@@ -1,6 +1,6 @@
 import React, {ReactNode, HTMLProps} from "react"
 
-import {Rect, useResizeObserver} from "./hooks/useResizeObserver"
+import {Rect, useResizeObserver} from "./hooks/use-resize-observer"
 
 interface Props {
   render: (arg0: Rect) => ReactNode

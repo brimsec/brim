@@ -1,7 +1,7 @@
 import {Application} from "spectron"
 
-import logStep from "../util/logStep"
-import waitForResults from "../util//waitForResults"
+import logStep from "../util/log-step"
+import waitForResults from "../util/wait-for-results"
 import {selectors} from "../../../../src/js/test/integration"
 import {submitButton} from "src/js/test/locators"
 

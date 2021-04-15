@@ -1,5 +1,5 @@
 import {LogsPostArgs, LogsPostPathsArgs} from "../types"
-import {getDefaultJsonTypeConfig} from "../config/json_types"
+import {getDefaultJsonTypeConfig} from "../config/json-types"
 
 export default {
   post({spaceId, files, types}: LogsPostArgs) {

@@ -6,12 +6,12 @@ import React from "react"
 import ReactDOM from "react-dom"
 
 import App from "./components/App"
-import AppErrorBoundary from "./components/AppErrorBoundary"
-import StartupError from "./components/StartupError"
+import AppErrorBoundary from "./components/app-error-boundary"
+import StartupError from "./components/startup-error"
 import initialize from "./initializers/initialize"
 import lib from "./lib"
 import theme from "./style-theme"
-import deletePartialSpaces from "./flows/deletePartialSpaces"
+import deletePartialSpaces from "./flows/delete-partial-spaces"
 import TabHistories from "./state/TabHistories"
 
 initialize()

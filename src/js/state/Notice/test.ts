@@ -1,5 +1,5 @@
-import AppError from "../../models/AppError"
-import initTestStore from "../../test/initTestStore"
+import AppError from "../../models/app-error"
+import initTestStore from "../../test/init-test-store"
 import notice from "./"
 
 let store

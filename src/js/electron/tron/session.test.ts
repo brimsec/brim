@@ -3,9 +3,9 @@ import fsExtra from "fs-extra"
 import path from "path"
 import os from "os"
 
-import disableLogger from "../../test/helpers/disableLogger"
-import formatSessionState from "./formatSessionState"
-import initTestStore from "../../test/initTestStore"
+import disableLogger from "../../test/helpers/disable-logger"
+import formatSessionState from "./format-session-state"
+import initTestStore from "../../test/init-test-store"
 import tron from "./"
 
 const dir = path.join(os.tmpdir(), "session.test.ts")

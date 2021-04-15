@@ -4,7 +4,7 @@ import ReactDOM from "react-dom"
 import {CSSTransition} from "react-transition-group"
 import styled from "styled-components"
 import doc from "../lib/doc"
-import {CircleCloseButton} from "./CircleCloseButton"
+import {CircleCloseButton} from "./circle-close-button"
 
 const Wrap = styled.div`
   position: fixed;

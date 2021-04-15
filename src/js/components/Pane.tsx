@@ -1,7 +1,7 @@
 import React, {HTMLProps} from "react"
 import classNames from "classnames"
 
-import DragAnchor from "./DragAnchor"
+import DragAnchor from "./drag-anchor"
 
 type Pass = HTMLProps<any>
 

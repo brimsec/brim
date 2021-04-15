@@ -1,7 +1,7 @@
 import * as zjson from "../../zjson"
 import {constructType} from "../construct"
 import {Field} from "../field"
-import {Type, ZngClass} from "../ts_types"
+import {Type, ZngClass} from "../ts-types"
 
 class UnknownColumnError extends Error {
   constructor(unknown: string, names: string[]) {

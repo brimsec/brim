@@ -1,6 +1,6 @@
 import {createSelector} from "reselect"
 import brim, {BrimSpace, Span} from "../../brim"
-import {DateTuple} from "../../lib/TimeWindow"
+import {DateTuple} from "../../lib/time-window"
 import Chart from "../Chart"
 import Current from "../Current"
 import {SpanArgs} from "../Search/types"
@@ -10,7 +10,7 @@ import Url from "../Url"
 import {SearchParams} from "../Url/selectors"
 import Viewer from "../Viewer"
 import {Workspace} from "../Workspaces/types"
-import activeTabSelect from "./activeTabSelect"
+import activeTabSelect from "./active-tab-select"
 import {TabState} from "./types"
 
 const workspaceUrl = createSelector<State, Workspace | null, string>(

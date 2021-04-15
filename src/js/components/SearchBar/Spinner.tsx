@@ -2,9 +2,9 @@ import {useSelector} from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
-import MacSpinner from "../MacSpinner"
+import MacSpinner from "../mac-spinner"
 import Tab from "../../state/Tab"
-import useDelayedMount from "../hooks/useDelayedMount"
+import useDelayedMount from "../hooks/use-delayed-mount"
 
 const Wrap = styled.div`
   animation: fadein 300ms;

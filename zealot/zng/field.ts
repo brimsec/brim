@@ -1,5 +1,5 @@
 import {constructType} from "./construct"
-import {Container, SerializedData, Type} from "./ts_types"
+import {Container, SerializedData, Type} from "./ts-types"
 
 export interface ContainerField {
   name: string

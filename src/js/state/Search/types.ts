@@ -1,4 +1,4 @@
-import {DateTuple} from "../../lib/TimeWindow"
+import {DateTuple} from "../../lib/time-window"
 import {Span, Ts} from "../../brim"
 
 export type SearchState = {

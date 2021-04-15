@@ -1,6 +1,6 @@
 import {Application} from "spectron"
 
-import logStep from "../util/logStep"
+import logStep from "../util/log-step"
 import {retry} from "../../control"
 
 export default (app: Application) =>

@@ -6,7 +6,7 @@ import {
 } from "../../src/js/test/locators"
 import {getResults} from "../lib/appStep/api/search"
 import {testDataDir} from "../lib/env"
-import createTestBrim from "../lib/createTestBrim"
+import createTestBrim from "../lib/create-test-brim"
 
 const config = path.join(testDataDir(), "custom-schema.json")
 

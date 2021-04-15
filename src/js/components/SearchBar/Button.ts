@@ -1,7 +1,7 @@
 import {darken} from "polished"
 import styled from "styled-components"
 
-import {cssVar} from "../../lib/cssVar"
+import {cssVar} from "../../lib/css-var"
 
 const Button = styled.button`
   background: none;

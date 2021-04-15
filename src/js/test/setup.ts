@@ -1,6 +1,6 @@
 require("regenerator-runtime/runtime")
 
-import initDOM from "../initializers/initDOM"
+import initDOM from "../initializers/init-dom"
 
 const Adapter = require("enzyme-adapter-react-16")
 const enzyme = require("enzyme")

@@ -62,7 +62,7 @@ Then in the migration test file, you can access this file using the helper funct
 ```js
 // src/js/state/migrations/202007101024_addNicknameToConnection.test.js
 
-import getTestState from "../../test/helpers/getTestState"
+import getTestState from "../../test/helpers/get-test-state"
 import migrate from "./202007101024_addNicknameToConnection"
 
 test("202007101024_addNicknameToConnection", () => {

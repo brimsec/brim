@@ -1,7 +1,7 @@
 import isString from "lodash/isString"
 import upperFirst from "lodash/upperFirst"
 
-import AppError, {RawError} from "./AppError"
+import AppError, {RawError} from "./app-error"
 
 export class UnauthorizedError extends AppError {
   static is(e: RawError) {

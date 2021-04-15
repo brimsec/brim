@@ -1,6 +1,6 @@
 import {BrowserWindow} from "electron"
 
-import {WindowName} from "./windowManager"
+import {WindowName} from "./window-manager"
 
 export type WindowParams = {
   size: [number, number]

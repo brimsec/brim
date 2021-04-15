@@ -1,7 +1,7 @@
 import moment from "moment-timezone"
 import bigInt from "big-integer"
 
-import {DateTuple} from "../lib/TimeWindow"
+import {DateTuple} from "../lib/time-window"
 import {TimeUnit} from "../lib"
 import {isDate} from "../lib/is"
 import brim, {Ts, Span} from "./"

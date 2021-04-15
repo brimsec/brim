@@ -11,7 +11,7 @@ import brim from "../brim"
 import Handlers from "../state/Handlers"
 import Prefs from "../state/Prefs"
 import View from "../state/View"
-import useSearchShortcuts from "./useSearchShortcuts"
+import useSearchShortcuts from "./use-search-shortcuts"
 
 export default function App() {
   const dispatch = useDispatch()

@@ -1,4 +1,4 @@
-import createTestBrim from "itest/lib/createTestBrim"
+import createTestBrim from "itest/lib/create-test-brim"
 import {currentSpaceItem} from "src/js/test/locators"
 
 describe("deleting a space", () => {

@@ -2,8 +2,8 @@ import React, {useState} from "react"
 import classNames from "classnames"
 
 import {RightClickBuilder} from "../../types"
-import CompoundField from "./CompoundField"
-import SingleField from "./SingleField"
+import CompoundField from "./compound-field"
+import SingleField from "./single-field"
 import Tooltip from "../Tooltip"
 import {zng} from "zealot"
 

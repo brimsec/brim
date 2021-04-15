@@ -3,7 +3,7 @@ import {basename} from "path"
 import {sprintf} from "sprintf-js"
 
 import appStep from "../lib/appStep/api"
-import newAppInstance from "../lib/newAppInstance"
+import newAppInstance from "../lib/new-app-instance"
 import {handleError} from "../lib/jest"
 
 const simpleQueries = [

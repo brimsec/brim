@@ -9,7 +9,7 @@ import {AppDispatch} from "../state/types"
 import Workspaces from "../state/Workspaces"
 
 import ToolbarButton from "../../../app/toolbar/button"
-import MacSpinner from "./MacSpinner"
+import MacSpinner from "./mac-spinner"
 
 const PageWrap = styled.div`
   width: 100%;

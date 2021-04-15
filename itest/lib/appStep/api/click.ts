@@ -2,7 +2,7 @@ import {Application} from "spectron"
 
 import {retryUntil} from "../../control"
 
-import logStep from "../util/logStep"
+import logStep from "../util/log-step"
 
 const waitForClickable = async (app: Application, selector: string) => {
   // In testing, it's been shown than there is no need to scroll to

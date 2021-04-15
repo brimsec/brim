@@ -2,8 +2,8 @@ import {validateToken} from "../../auth0/utils"
 import brim from "../../brim"
 import Workspaces from "../../state/Workspaces"
 import WorkspaceStatuses from "../../state/WorkspaceStatuses"
-import refreshSpaceNames from "../refreshSpaceNames"
-import {getAuthCredentials} from "./getAuthCredentials"
+import refreshSpaceNames from "../refresh-space-names"
+import {getAuthCredentials} from "./get-auth-credentials"
 
 /**
  * Updates a workspaces status by trying to connect

@@ -1,6 +1,6 @@
 import Tabs from "../Tabs"
 import chart from "./"
-import initTestStore from "../../test/initTestStore"
+import initTestStore from "../../test/init-test-store"
 import {zjson, zng} from "zealot"
 
 let store, tabId

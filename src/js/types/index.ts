@@ -1,6 +1,6 @@
 import {SpanArgs} from "../state/Search/types"
 import {TimeUnit} from "../lib"
-import AppError from "../models/AppError"
+import AppError from "../models/app-error"
 import {MenuItemConstructorOptions} from "electron"
 import {zng} from "zealot"
 

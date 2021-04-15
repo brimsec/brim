@@ -10,7 +10,7 @@ module.exports = {
   // in there instead of up high next to the node_modules folder.
   roots: [".", "./test/unit"],
   snapshotSerializers: ["enzyme-to-json/serializer"],
-  globalSetup: "./src/js/test/globalSetup.ts",
+  globalSetup: "./src/js/test/global-setup.ts",
   transformIgnorePatterns: ["node_modules"],
   moduleDirectories: ["node_modules", "<rootDir>"],
   testPathIgnorePatterns: ["/node_modules/", "/itest/", "/dist/"]

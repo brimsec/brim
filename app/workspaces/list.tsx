@@ -4,7 +4,7 @@ import {useSelector} from "react-redux"
 import {useHistory} from "react-router"
 import {BrimWorkspace} from "src/js/brim"
 import workspace from "src/js/brim/workspace"
-import DataStoreIcon from "src/js/icons/DataStoreIcon"
+import DataStoreIcon from "src/js/icons/data-store-icon"
 import Workspaces from "src/js/state/Workspaces"
 import styled from "styled-components"
 

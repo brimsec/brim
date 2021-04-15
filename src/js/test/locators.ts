@@ -1,4 +1,4 @@
-import createLocator from "./createLocator"
+import createLocator from "./create-locator"
 
 export const jsonTypeConfigInput = createLocator("json_type_config_input")
 export const defaultModalButton = createLocator("default_modal_button")

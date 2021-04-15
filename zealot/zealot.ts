@@ -1,7 +1,7 @@
 import {createFetcher} from "./fetcher/fetcher"
 import {spaces, logs, pcaps, search, archive, subspaces} from "./api/mod"
 import {getHost} from "./util/host"
-import {getDefaultSearchArgs} from "./config/search_args"
+import {getDefaultSearchArgs} from "./config/search-args"
 import {
   SearchArgs,
   SpaceArgs,

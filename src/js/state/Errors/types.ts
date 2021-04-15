@@ -1,4 +1,4 @@
-import AppError from "../../models/AppError"
+import AppError from "../../models/app-error"
 
 export type ErrorsState = AppError[]
 export type ErrorsAction = ERROR_CREATE | ERRORS_CLEAR

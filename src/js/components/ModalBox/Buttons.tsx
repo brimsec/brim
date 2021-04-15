@@ -2,7 +2,7 @@ import React, {MouseEvent} from "react"
 
 import {ModalButton} from "./types"
 import {defaultModalButton} from "../../test/locators"
-import ButtonRow from "../ButtonRow"
+import ButtonRow from "../button-row"
 import ToolbarButton from "../../../../app/toolbar/button"
 
 type Props = {

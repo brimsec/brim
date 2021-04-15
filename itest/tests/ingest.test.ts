@@ -2,7 +2,7 @@ import path from "path"
 
 import {handleError} from "../lib/jest"
 import appStep from "../lib/appStep/api"
-import newAppInstance from "../lib/newAppInstance"
+import newAppInstance from "../lib/new-app-instance"
 
 describe("Ingest tests", () => {
   let app

@@ -1,4 +1,4 @@
-import HistoryButtons from "./HistoryButtons"
+import HistoryButtons from "./history-buttons"
 
 export default {
   HistoryButtons

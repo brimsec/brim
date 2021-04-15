@@ -1,6 +1,6 @@
 import * as React from "react"
 import classNames from "classnames"
-import createTypeEl from "./createTypeEl"
+import createTypeEl from "./create-type-el"
 
 export const Paragraph = createTypeEl("p", "paragraph")
 export const Mono = createTypeEl("p", "mono")

@@ -3,10 +3,10 @@ import {createSelector} from "reselect"
 import {ColumnsState} from "./types"
 import {State} from "../types"
 import {ViewerColumns} from "../Viewer/types"
-import {createColumnSet} from "./models/columnSet"
-import TableColumns from "../../models/TableColumns"
+import {createColumnSet} from "./models/column-set"
+import TableColumns from "../../models/table-columns"
 import Viewer from "../Viewer"
-import activeTabSelect from "../Tab/activeTabSelect"
+import activeTabSelect from "../Tab/active-tab-select"
 import {zng} from "zealot"
 
 const getColumns = activeTabSelect<ColumnsState>((tab) => tab.columns)

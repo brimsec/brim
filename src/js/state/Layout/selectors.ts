@@ -1,4 +1,4 @@
-import activeTabSelect from "../Tab/activeTabSelect"
+import activeTabSelect from "../Tab/active-tab-select"
 import {TabState} from "../Tab/types"
 
 export default {

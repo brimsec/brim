@@ -1,5 +1,5 @@
-import {appPathSetup} from "./appPathSetup"
-import userTasks from "./userTasks"
+import {appPathSetup} from "./app-path-setup"
+import userTasks from "./user-tasks"
 
 // app path and log setup should happen before other imports.
 appPathSetup()
@@ -7,12 +7,12 @@ appPathSetup()
 import {app} from "electron"
 import log from "electron-log"
 import "regenerator-runtime/runtime"
-import {setupAutoUpdater} from "./autoUpdater"
+import {setupAutoUpdater} from "./auto-updater"
 import {Brim} from "./brim"
-import globalStoreMainHandler from "./ipc/globalStore/mainHandler"
-import windowsMainHandler from "./ipc/windows/mainHandler"
-import secretsMainHandler from "./ipc/secrets/mainHandler"
-import electronIsDev from "./isDev"
+import globalStoreMainHandler from "./ipc/globalStore/main-handler"
+import windowsMainHandler from "./ipc/windows/main-handler"
+import secretsMainHandler from "./ipc/secrets/main-handler"
+import electronIsDev from "./is-dev"
 import menu from "./menu"
 import {handleQuit} from "./quitter"
 

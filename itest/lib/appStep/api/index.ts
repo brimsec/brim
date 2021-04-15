@@ -1,11 +1,11 @@
 import {click, rightClick} from "./click"
-import ingestFile from "./ingestFile"
+import ingestFile from "./ingest-file"
 import reload from "./reload"
-import savePcap from "./savePcap"
+import savePcap from "./save-pcap"
 import search from "./search"
-import setSpan from "./setSpan"
-import startApp from "./startApp"
-import takeScreenshot from "./takeScreenshot"
+import setSpan from "./set-span"
+import startApp from "./start-app"
+import takeScreenshot from "./take-screenshot"
 
 export default {
   click,

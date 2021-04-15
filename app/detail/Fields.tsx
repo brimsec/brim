@@ -4,12 +4,12 @@ import React, {memo, useCallback, useMemo, useState} from "react"
 import {zng} from "zealot"
 import {Data, Name, Value} from "app/core/Data"
 import {createCell} from "src/js/brim/cell"
-import BrimTooltip from "src/js/components/BrimTooltip"
-import ColumnDescription from "src/js/components/LogDetails/ColumnDescription"
+import BrimTooltip from "src/js/components/brim-tooltip"
+import ColumnDescription from "src/js/components/LogDetails/column-description"
 
-import PanelHeading from "./PanelHeading"
+import PanelHeading from "./panel-heading"
 import Panel from "./Panel"
-import contextMenu from "./flows/contextMenu"
+import contextMenu from "./flows/context-menu"
 
 type Props = {
   record: zng.Record

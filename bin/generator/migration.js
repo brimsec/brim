@@ -1,11 +1,11 @@
-const {camelCase} = require("lodash")
+const {kabobCase} = require("lodash")
 const moment = require("moment")
 const path = require("path")
 const {write} = require("../utils/file")
 const lastVersion = require("../../package.json").version
 
 async function handleMigration(input) {
-  let name = camelCase(input)
+  let name = kabobCase(input)
   let version = moment().format("YYYYMMDDHHmm")
   let title = version + "_" + name
   let file = title + ".ts"

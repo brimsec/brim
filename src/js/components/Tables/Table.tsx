@@ -1,7 +1,7 @@
 import React from "react"
 
 import {Column} from "../../types"
-import FieldCell from "../FieldCell"
+import FieldCell from "../field-cell"
 import {zng} from "zealot"
 
 export default function Table({className, ...props}: any) {

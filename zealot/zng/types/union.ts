@@ -1,6 +1,6 @@
 import * as zjson from "../../zjson"
 import {constructType} from "../construct"
-import {Type, ZngClass} from "../ts_types"
+import {Type, ZngClass} from "../ts-types"
 
 export class Union implements ZngClass<Type[] | null> {
   constructor(

@@ -1,8 +1,8 @@
-import MeasureLayer from "app/core/MeasureLayer"
+import MeasureLayer from "app/core/measure-layer"
 import React from "react"
 import ActionButtons from "./action-buttons"
 import ActionMenu from "./action-menu"
-import useVisibleActions from "./hooks/useVisibleActions"
+import useVisibleActions from "./hooks/use-visible-actions"
 
 /**
  * We must measure how big this component will be if all the actions are visible

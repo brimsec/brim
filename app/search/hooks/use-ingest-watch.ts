@@ -9,7 +9,7 @@ import Current from "src/js/state/Current"
 import Ingest from "src/js/state/Ingest"
 import {createPath} from "history"
 import {throttle} from "lodash"
-import usePrevious from "src/js/components/hooks/usePrevious"
+import usePrevious from "src/js/components/hooks/use-previous"
 
 function useThrottledCallback(cb: Function, delay: number) {
   const options = {leading: true, trailing: true}

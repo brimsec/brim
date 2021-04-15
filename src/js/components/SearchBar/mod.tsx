@@ -3,14 +3,14 @@ import styled from "styled-components"
 
 import Pins from "./Pins"
 import Error from "./Error"
-import HistoryArrows from "./HistoryArrows"
+import HistoryArrows from "./history-arrows"
 import Input from "./Input"
-import InputBackdrop from "./InputBackdrop"
-import MenuAction from "./MenuAction"
-import PinAction from "./PinAction"
+import InputBackdrop from "./input-backdrop"
+import MenuAction from "./menu-action"
+import PinAction from "./pin-action"
 import Spinner from "./Spinner"
-import SubmitButton from "./SubmitButton"
-import SaveAction from "./SaveAction"
+import SubmitButton from "./submit-button"
+import SaveAction from "./save-action"
 
 const Wrap = styled.div`
   width: 100%;

@@ -1,10 +1,10 @@
 import {url} from "../util/utils"
-import {parseContentType} from "./contentType"
+import {parseContentType} from "./content-type"
 import {Enhancer, ZealotPayload, ZReponse} from "../types"
 import {createIterator} from "./iterator"
 import {createStream} from "./stream"
 import {createError} from "../util/error"
-import {createPushableIterator} from "./pushable_iterator"
+import {createPushableIterator} from "./pushable-iterator"
 import {parseLines} from "../ndjson/lines"
 
 export type FetchArgs = {

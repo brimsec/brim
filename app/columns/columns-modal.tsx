@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import {useDispatch, useSelector} from "react-redux"
 import {CSSTransition} from "react-transition-group"
-import {XColumnChooserMenu} from "src/js/components/ColumnChooserMenu"
+import {XColumnChooserMenu} from "src/js/components/column-chooser-menu"
 import lib from "src/js/lib"
 import Modal from "src/js/state/Modal"
 
