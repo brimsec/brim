@@ -1,4 +1,4 @@
-import chrono from "chrono-node"
+import * as chrono from "chrono-node"
 import moment from "moment-timezone"
 
 import brim from "../brim"

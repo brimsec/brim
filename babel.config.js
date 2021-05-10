@@ -1,3 +1,5 @@
+const {extendDefaultPlugins} = require("svgo")
+
 module.exports = (api) => {
   api.cache(true)
   return {
@@ -11,7 +13,20 @@ module.exports = (api) => {
       "@babel/plugin-proposal-object-rest-spread",
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-proposal-numeric-separator",
-      "inline-react-svg",
+      [
+        "inline-react-svg",
+        {
+          // This is needed to keep the viewbox in the svg files
+          svgo: {
+            plugins: extendDefaultPlugins([
+              {
+                name: "removeViewBox",
+                active: false
+              }
+            ])
+          }
+        }
+      ],
       [
         "module-resolver",
         {
