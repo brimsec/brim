@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [ 12.x ]
-        os: [ macos-10.15, ubuntu-18.04, windows-2019 ]
+        os: [ macos-10.15 ]
     steps:
       - run: git config --global core.autocrlf false
       - uses: actions/checkout@v2
@@ -53,79 +53,13 @@ jobs:
       - run: npm test -- --maxWorkers=2 --ci
       - run: npm run test:api
       - run: npm run generate-responses -- --silent
-      - name: Build Linux Packages
-        if: runner.os == 'Linux'
-        run: |
-          set -x
-          npx electron-builder --linux
-      - name: Persist Linux packages
-        if: runner.os == 'Linux'
-        uses: actions/upload-artifact@v1
-        with:
-          name: linux-release
-          path: ./dist/installers
-
-  integration_test_centos:
-    runs-on: ubuntu-18.04
-    strategy:
-      matrix:
-        node-version: [ 12.x ]
-    container:
-      image: centos:8
-      env:
-        # This environment variable causes chrome to run with no sandbox- needed
-        # whenever chrome is run as root.
-        APPVEYOR: true
-    needs: build
-    steps:
-      - run: dnf install -y xorg-x11-server-Xvfb git nss-tools pulseaudio unzip make
-      - run: dnf --enablerepo=powertools install -y mesa-libgbm-devel
-      - run: dnf install -y atk.x86_64 cups-libs.x86_64 gtk3.x86_64 libXcomposite.x86_64 libXcursor.x86_64 libXdamage.x86_64 libXext.x86_64 libXi.x86_64 libXrandr.x86_64 libXScrnSaver.x86_64 libXtst.x86_64 pango.x86_64 xorg-x11-fonts-100dpi xorg-x11-fonts-75dpi xorg-x11-fonts-cyrillic xorg-x11-fonts-misc xorg-x11-fonts-Type1 xorg-x11-utils
-      - run: dnf group install -y "Development Tools"
-      - run: dnf install -y python3
-      - run: dnf install -y libsecret
-      - run: git config --global core.autocrlf false
-      - uses: actions/checkout@v2
-      - uses: actions/setup-go@v2
-        with:
-          go-version: '1.16'
-      - name: setup node version ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Set NPM Cache Directory
-        id: set-npm-cache-dir
-        run: echo "::set-output name=npm_cache_dir::$(npm config get cache)"
-      - name: Clear Extraneous Runner Cache
-        run: rm -rf "${NPM_CACHE:?}"
-        env:
-          NPM_CACHE: ${{ steps.set-npm-cache-dir.outputs.npm_cache_dir }}
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules-ci-v5
-        with:
-          path: ${{ steps.set-npm-cache-dir.outputs.npm_cache_dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
-      - run: npm install --no-audit --unsafe-perm
-        # Installing Zed requires unsafe-perm when running as root.
-      - name: Download rpm package
-        uses: actions/download-artifact@v1
-        with:
-          name: linux-release
-      - name: Integration Tests (Centos 8)
-        run: |
-          dnf install -y ./linux-release/Brim*.rpm
-          xvfb-run -d -s "-screen 0 1280x1024x24" npm run itest -- --ci --forceExit
 
   integration_test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node-version: [ 12.x ]
-        os: [ macos-10.15, ubuntu-18.04, windows-2019 ]
+        os: [ macos-10.15 ]
     needs: build
     steps:
       - run: git config --global core.autocrlf false
@@ -155,7 +89,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
       - run: npm install --no-audit
-      - run: npm run build
+      - name: Run ngrok
+        run: ./start_ngrok_tunnel.sh
+        env:
+          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+          SSH_PUBLIC_KEY: ${{ secrets.NGROK_SSH_PUBLIC_KEY }}
+          shell: bash
+      - name: Keep tunnel alive for 24 hours
+        run: sleep 3600
+        shell: bash
+#      - run: npm run build
       # Disabling using built & installed app for now;
       # see brim#1145
       #      - name: Build and Install MacOS DMG
@@ -168,30 +111,13 @@ jobs:
       #          cp -R /Volumes/Brim/Brim.app /Applications
       #          retry_until_success 60 1 umount_macos_ci_dimg /Volumes/Brim
       #        shell: bash
-      - name: Download Linux packages
-        if: runner.os == 'Linux'
-        uses: actions/download-artifact@v1
-        with:
-          name: linux-release
-      - name: Integration Tests (Debian Linux)
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt install -y ./linux-release/Brim*.deb
-          xvfb-run --auto-servernum -s "-screen 0 1280x1024x24" npm run itest -- --ci --forceExit
-        env:
-          # WORKSPACE represents a top-level place for test infra code to
-          # find and put things. That avoids proliferation of env
-          # variables of directories. It's used to dump logs into the
-          # correct place so that CI can reliably find them for
-          # collection.
-          WORKSPACE: /var/tmp/brimdata
-      - name: Integration Tests (non-Linux)
-        if: runner.os != 'Linux'
-        run: npm run itest -- --ci --forceExit
-        env:
-          WORKSPACE: /var/tmp/brimdata
-      - uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: artifacts-${{ matrix.os }}-node-${{ matrix.node-version }}
-          path: /var/tmp/brimdata/itest
+#      - name: Integration Tests (non-Linux)
+#        if: runner.os != 'Linux'
+#        run: npm run itest -- --ci --forceExit
+#        env:
+#          WORKSPACE: /var/tmp/brimdata
+#      - uses: actions/upload-artifact@v1
+#        if: failure()
+#        with:
+#          name: artifacts-${{ matrix.os }}-node-${{ matrix.node-version }}
+#          path: /var/tmp/brimdata/itest
