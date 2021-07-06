@@ -57,6 +57,7 @@ export function PrimitiveValue(props: ValueProps) {
   const fillCell = props.field.value === props.value // This is the only value in the cell
   return (
     <BG
+      role="cell"
       style={{width: fillCell ? "100%" : "auto"}}
       className={typeClassNames(props.value)}
       onContextMenu={() =>

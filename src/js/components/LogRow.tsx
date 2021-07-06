@@ -46,6 +46,7 @@ const LogRow = (props: Props) => {
   }
   return (
     <div
+      role="row"
       className={classNames("log-row", {highlight, even: index % 2 === 0})}
       style={Styler.row(dimens)}
       onClick={onClick}

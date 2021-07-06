@@ -1,6 +1,7 @@
 import {MenuItemConstructorOptions, remote, PopupOptions} from "electron"
 
-const isTest = process.env.BRIM_ITEST === "true"
+const isTest =
+  process.env.BRIM_ITEST === "true" || process.env.NODE_ENV === "test"
 
 export function showContextMenu(
   template: MenuItemConstructorOptions[],

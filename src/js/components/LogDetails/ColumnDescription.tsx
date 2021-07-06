@@ -19,9 +19,7 @@ export default function ColumnDescription({column, path}: Props) {
         <p>{column.name}</p> <p>{col.type}</p>
       </div>
       <div className="tip-body">
-        <p>
-          <ReactMarkdown>{col.desc}</ReactMarkdown>
-        </p>
+        <ReactMarkdown>{col.desc}</ReactMarkdown>
       </div>
       {info.isKnown() && (
         <div className="tip-footer">

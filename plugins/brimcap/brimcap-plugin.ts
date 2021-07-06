@@ -372,6 +372,7 @@ export default class BrimcapPlugin {
   }
 
   private async updateSuricata() {
+    if (process.env.NODE_ENV === "test") return // we need a way to turn this off in dev/test
     const {zdepsDirectory} = this.api.getAppConfig()
     const cmdName =
       process.platform === "win32" ? "suricataupdater.exe" : "suricataupdater"

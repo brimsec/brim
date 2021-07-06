@@ -1,9 +1,7 @@
-import itest from "../helpers/itest"
 import {toLower} from "lodash"
+import itest from "../helpers/itest"
 
-const maybeSkip = process.platform === "win32" ? describe.skip : describe
-
-maybeSkip("Detail Pane", () => {
+describe("Detail Pane", () => {
   // Names of the sections to test for
   const FIELDS = "fields"
   const UID = "correlation"
@@ -16,15 +14,24 @@ maybeSkip("Detail Pane", () => {
   beforeAll(async () => {
     await brim.ingest("ifconfig.zng")
     await brim.search("")
-    await brim.clickAppMenuItem("toggle-right-pane")
+    brim.clickAppMenuItem("toggle-right-pane")
+    await $.findByRole("complementary", {name: "Details"})
   })
 
   // Helper function to perform the common actions
   async function testDetailHeaders(path, sectionNames) {
-    await brim.click($.viewerCellContaining(path))
-    const sections = await brim.findAll($.detailPaneSections)
+    const viewer = await $.findByRole("list", {name: "results"})
+    const cells = await viewer.findAllByText(path)
+    await brim.click(cells[0])
+    const details = await $.findByRole("complementary", {name: "Details"})
+    const sections = await details.findAllByRole("heading")
     const headers = await Promise.all(sections.map((s) => s.getText()))
-    expect(headers.map(toLower)).toEqual(expect.arrayContaining(sectionNames))
+    try {
+      expect(headers.map(toLower)).toEqual(expect.arrayContaining(sectionNames))
+    } catch (e) {
+      await brim.takeScreenshot()
+      throw e
+    }
   }
 
   test("for capture loss", () => {

@@ -59,17 +59,25 @@ function HTMLMenuItem({item}) {
 }
 
 function stubIpcSend(name, ...args) {
-  /*
+  if (process.env.BRIM_ITEST === "true") {
+    /*
+    This is for integration tests when we are testing the real ipc communication
+
     Since ipcRendere inherits from EventEmitter, we can simply emit this event
     right here in the renderer to simulate it being sent over from the main
     processes like it does with the native context menu.
   */
-  ipcRenderer.emit(
-    name,
-    null,
-    /* event */
-    ...args
-  )
+    ipcRenderer.emit(
+      name,
+      null,
+      /* event */
+      ...args
+    )
+  } else {
+    // This is for unit tests when the ipcRenderer is mocked
+    // @ts-ignore
+    ipcRenderer.emitter.emit("receive-from-main", name, ...args)
+  }
 }
 
 const stubbedBrowserWindow = {webContents: {send: stubIpcSend}}

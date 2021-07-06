@@ -51,6 +51,7 @@ export function LeftPane() {
       width={width}
       onDrag={onDragPane}
       className="history-pane"
+      name="Sidebar"
     >
       {!id ? (
         <EmptyText>

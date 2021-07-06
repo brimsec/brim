@@ -58,6 +58,7 @@ export default class RightPane extends React.Component<Props, S> {
         position="right"
         width={width}
         className="log-detail-pane"
+        name="Details"
       >
         {currentLog && (
           <PaneHeader>

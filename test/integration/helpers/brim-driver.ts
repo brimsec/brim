@@ -1,16 +1,14 @@
+import {setupBrowser, WebdriverIOQueries} from "@testing-library/webdriverio"
 import {Application} from "spectron"
 import lib from "src/js/lib"
-import {Locator} from "./createLocator"
-import {htmlContextMenu} from "./locators"
-import {isString} from "lodash"
-import {click, rightClick} from "./appStep/api/click"
 import ingestFile from "./appStep/api/ingestFile"
 import search, {getResults} from "./appStep/api/search"
 import takeScreenshot from "./appStep/api/takeScreenshot"
 import waitForHook from "./appStep/api/waitForHook"
 import logStep from "./appStep/util/logStep"
 import {retryUntil} from "./control"
-
+import {Locator} from "./createLocator"
+import {htmlContextMenu} from "./locators"
 export default class BrimDriver {
   app: Application
 
@@ -18,17 +16,11 @@ export default class BrimDriver {
     this.app = app
   }
 
-  $(locator: Locator | string): WebdriverIO.Element {
-    if (isString(locator)) return this.app.client.$(locator)
-    else return this.app.client.$(locator.css)
-  }
-
-  find(selector: string): WebdriverIO.Element {
-    return this.app.client.$(selector)
-  }
-
-  findAll(selector: string): WebdriverIO.ElementArray {
-    return this.app.client.$$(selector)
+  init(app): this is BrimDriver & WebdriverIOQueries {
+    this.app = app
+    const queries = setupBrowser(app.client)
+    Object.assign(this, queries)
+    return true
   }
 
   hook(name, opts?) {
@@ -38,10 +30,6 @@ export default class BrimDriver {
   navTo(path: string) {
     // @ts-ignore
     return this.app.client.execute((path) => navTo(path), path)
-  }
-
-  getApp() {
-    return this.app
   }
 
   ingest(file: string) {
@@ -68,14 +56,6 @@ export default class BrimDriver {
     })
   }
 
-  getText(locator: Locator) {
-    return logStep(`get text from ${locator.css}`, async () => {
-      const el = await this.app.client.$(locator.css)
-      await el.waitForDisplayed()
-      return el.getText()
-    })
-  }
-
   takeScreenshot() {
     return takeScreenshot(this.app)
   }
@@ -86,7 +66,7 @@ export default class BrimDriver {
   }
 
   async clickContextMenuItem(text: string) {
-    const menu = await this.$(htmlContextMenu)
+    const menu = await this.app.client.$(htmlContextMenu)
     const item = await menu.$(`li=${text}`)
     return item.click()
   }
@@ -95,24 +75,12 @@ export default class BrimDriver {
     return search(this.app, input)
   }
 
-  click(locator: Locator | string | WebdriverIO.Element) {
-    if (isString(locator)) {
-      return click(this.app, locator)
-    } else if ("css" in locator) {
-      return click(this.app, locator.css)
-    } else {
-      return locator.click({button: "left"})
-    }
+  click(locator: WebdriverIO.Element) {
+    return locator.click({button: "left"})
   }
 
-  rightClick(locator: Locator | string | WebdriverIO.Element) {
-    if (isString(locator)) {
-      return rightClick(this.app, locator)
-    } else if ("css" in locator) {
-      return rightClick(this.app, locator.css)
-    } else {
-      return locator.click({button: "right"})
-    }
+  rightClick(locator: WebdriverIO.Element) {
+    return locator.click({button: "right"})
   }
 
   hasText(input: string | RegExp, locator: Locator | string = "body") {

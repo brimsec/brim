@@ -28,7 +28,8 @@ export default class PluginManager {
       }
 
       const pluginName = pluginDir.fileName()
-      const entryPoint = path.join(dir, pluginName, "index.js")
+      const index = process.env.NODE_ENV === "test" ? "index.ts" : "index.js"
+      const entryPoint = path.join(dir, pluginName, index)
       if (!lib.file(entryPoint).existsSync()) {
         console.error(
           "Plugin directory must contain an index file as the entry point."

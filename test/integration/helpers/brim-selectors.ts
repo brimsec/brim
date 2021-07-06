@@ -1,14 +1,15 @@
-import * as locators from "./locators"
-import {quote} from "./utils"
+import {
+  BrowserBase,
+  setupBrowser,
+  WebdriverIOBoundFunctions
+} from "@testing-library/webdriverio"
+import {queries} from "@testing-library/dom/types"
 
+export type InitializedBrimSelectors = BrimSelectors &
+  WebdriverIOBoundFunctions<typeof queries>
 export default class BrimSelectors {
-  toolbarView = `button[aria-label="View"]`
-  detailPane = locators.detailPane.css
-  detailPaneSections = this.detailPane + " h4"
-
-  viewerCellContaining(text) {
-    return (
-      locators.viewerResults.xpath + `//span[contains(text(), ${quote(text)})]`
-    )
+  init(browser: BrowserBase): this is InitializedBrimSelectors {
+    Object.assign(this, setupBrowser(browser))
+    return true
   }
 }

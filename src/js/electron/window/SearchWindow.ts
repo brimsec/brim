@@ -18,6 +18,7 @@ export class SearchWindow implements BrimWindow {
   ref: BrowserWindow
   lastFocused: number
   initialState: any
+  query: object | undefined
 
   constructor(
     dimens: Partial<Dimens>,
@@ -29,6 +30,7 @@ export class SearchWindow implements BrimWindow {
     this.id = id
     this.initialState = initialState
     this.touchLastFocused()
+    this.query = query
     this.ref = new BrowserWindow({
       ...getWindowDimens(dimens, DEFAULT_DIMENS, screens),
       titleBarStyle: "hidden",

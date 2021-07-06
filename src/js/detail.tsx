@@ -1,7 +1,7 @@
+import WindowRouter from "app/router/window-router"
 import React from "react"
 import ReactDOM from "react-dom"
 import {Provider} from "react-redux"
-import {Router} from "react-router"
 import "regenerator-runtime/runtime"
 import {ThemeProvider} from "styled-components"
 import AppErrorBoundary from "./components/AppErrorBoundary"
@@ -19,7 +19,7 @@ initDetail()
       pluginManager.deactivate()
     }
     ReactDOM.render(
-      <Router history={global.windowHistory}>
+      <WindowRouter>
         <AppErrorBoundary>
           <div id="modal-dialog-root" />
           <Provider store={store}>
@@ -30,7 +30,7 @@ initDetail()
             </ThemeProvider>
           </Provider>
         </AppErrorBoundary>
-      </Router>,
+      </WindowRouter>,
       lib.doc.id("app-root")
     )
   })

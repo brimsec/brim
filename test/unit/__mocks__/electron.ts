@@ -1,19 +1,18 @@
-import {join} from "path"
 import createIPCMock from "electron-mock-ipc"
+import EventEmitter from "events"
+import {join} from "path"
 
 const mockIpc = createIPCMock()
 export const ipcMain = mockIpc.ipcMain
 export const ipcRenderer = mockIpc.ipcRenderer
 
-export class BrowserWindow {
-  webContents: {send: any}
-  constructor() {
-    this.webContents = {
-      send: (channel, ...args) => {
-        ipcRenderer.emitter.emit("receive-from-main", channel, ...args)
-      }
-    }
+class WebContents extends EventEmitter {
+  send(channel, ...args) {
+    ipcRenderer.emitter.emit("receive-from-main", channel, ...args)
   }
+}
+export class BrowserWindow {
+  webContents = new WebContents()
   center() {}
   setMenu() {}
   on() {
@@ -39,7 +38,7 @@ class MockApp {
     return "TestApp"
   }
   getPath() {
-    return "/fake/path"
+    return join(__dirname, "../../../run/unit/data")
   }
   getVersion() {
     return "0.0.0"

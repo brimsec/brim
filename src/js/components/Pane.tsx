@@ -33,13 +33,22 @@ type Props = {
   width: number
   className: string
   innerRef?: any
+  name: string
 }
 
 class Pane extends React.Component<Props> {
   render() {
     if (!this.props.isOpen) return null
 
-    const {position, onDrag, children, width, className, innerRef} = this.props
+    const {
+      position,
+      onDrag,
+      children,
+      width,
+      className,
+      innerRef,
+      name
+    } = this.props
     const anchorPos = position === "left" ? "right" : "left"
 
     return (
@@ -47,6 +56,7 @@ class Pane extends React.Component<Props> {
         ref={innerRef}
         className={`pane pane-${position} ${className}`}
         style={{width}}
+        aria-label={name}
       >
         {children}
         <DragAnchor onDrag={onDrag} position={anchorPos} />

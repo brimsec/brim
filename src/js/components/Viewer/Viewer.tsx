@@ -104,6 +104,8 @@ type ListProps = {
 const List = React.memo<ListProps>(function List(props) {
   return (
     <div
+      role="list"
+      aria-label="results"
       className="list"
       style={Styler.list(props.dimens)}
       {...reactElementProps("viewer_results")}
