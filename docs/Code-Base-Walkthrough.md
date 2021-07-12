@@ -20,76 +20,25 @@ The first file executed is `src/js/electron/main.js`. It will create a BrowserWi
 
 ## Directory Structure
 
-All these directories assume you are in `src/js/`.
+```
+├── app (renderer code)
+│   ├── core (generic shared code)
+│   ├── features (larger app features)
+│   ├── initializers (code run on startup)
+│   ├── plugins (plugin code)
+│   ├── routes (entry points for each url)
+│   ├── state (ui state)
+│   ├── window-a.tsx (window entry points)
+│   └── window-b.tsx
+├── electron (main process code)
+└── ppl (licensed code)
+```
 
-**search.js, about.js, detail.js**
 
-These are the entry points for the three types of windows in the App.
+**Import Rule**: Only import modules from "core", "state", or your own descendants. 
 
-**/brim**
-
-Domain specific structures like `log`, `field`, `record`, and `program`.
-
-**/components**
-
-All React components used within the app.
-
-**/electron**
-
-Code intended to run in [Electron's main process](https://www.electronjs.org/docs/tutorial/quick-start#main-and-renderer-processes). Also contains the app's entry point, `src/js/electron/main.js`.
-
-**/errors**
-
-A place for known app errors to be built.
-
-**/flows**
-
-Business logic for the app like `submitSearch` `createSpace` `exportResults`. These files contain redux thunks which allow them to access state and dispatch actions.
-
-**/initializers**
-
-Code that boots up in the browser window. It creates the redux store, adds ipc listeners, etc.
-
-**/lib**
-
-Generic structures that are helpful to have like `file`, `doc`, `win`,`is`,`transaction`. They are independent and could be used in another project.
-
-**/models**
-
-Legacy location for domain specific structures.
-
-**/searches**
-
-Deprecated, this held logic to issue different types of searches within the app, now available in `/flows`.
-
-**/services**
-
-Code that helps call out to third-party services.
-
-**/state**
-
-All the redux reducers, actions, and selectors go in this directory. It's organized by the slice they manage, like: `History`, `Modal`, `Layout`, `Viewer`, `Tabs`.
-
-**/stdlib**
-
-Deprecated, generic structures should now live in `lib`.
-
-**/style-theme**
-
-Where the shared colors and styles exist for the Styled Components library.
-
-**/test**
-
-Test helpers and test data. Actual unit tests should go next to the files they exercise.
-
-**/types**
-
-A place for generic types that are used throughout the app. If you need to create a type that is specific to a component or a class, define and export it from here.
-
-**/ppl/lake**
-
-Code that runs the backend zed lake service process on localhost.
-
+Exceptions:
+* Components in "routes" can import modules from "features".
 ## Libraries
 
 We are an Electron app, so [electron](https://www.electronjs.org/docs) is the core library we use. For those unfamiliar, it's helpful to understand the [main vs renderer processes](https://www.electronjs.org/docs/tutorial/quick-start#main-and-renderer-processes) in an Electron app.
@@ -121,32 +70,6 @@ Additionally, we rely heavily on the node modules listed here:
 
 ## Patterns
 
-**Closures over Classes**
-
-For utility classes and domain models, we've been using functions that return objects with methods and data, rather than the `Class`. Prefer this style over classes if possible.
-
-```js
-// Closure for example (preferred)
-function createLog(data) {
-  return {
-    getField: (name) => data.find((f) => f.name === name)
-  }
-}
-```
-
-```js
-// Class for example (not preferred)
-Class Log {
-  constructor(data) {
-    this.data = data
-  }
-
-  getFieid(name) {
-    return this.data.find(f => f.name === name)
-  }
-}
-```
-
 **Testing**
 
 Tests go right next to file they are testing with a `.test.js` suffix. Tests can accompany:
@@ -156,12 +79,6 @@ Tests go right next to file they are testing with a `.test.js` suffix. Tests can
 - Domain classes
 - Utility classes
 - React Components
-
-However, it's not easy to test React components in unit tests, so we don't have many. The integration tests help with coverage there.
-
-**Hooks**
-
-There are some useful, generic hooks located in `src/js/components/hooks`.
 
 ## Diverging Patterns
 

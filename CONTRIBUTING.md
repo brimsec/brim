@@ -24,7 +24,7 @@ npm install
 npm start
 ```
 
-`npm install` will download all required dependencies, including zqd and zeek. Running `npm start` will compile files from `./src` to `./dist` and open the app. When a file is changed, it will recompile it and reload the app.
+`npm install` will download all required dependencies, including zqd and zeek. Running `npm start` will compile source files in the root directory to `./dist` and open the app (see babel.config.js for details on what get compiled). When a file is changed, it will recompile it and reload the app.
 
 On subsequent updates, `git pull` then `npm install`.
 
