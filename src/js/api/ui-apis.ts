@@ -24,5 +24,19 @@ export class ConfigsApi {
 
   add(config: Config) {
     this.dispatch(Configs.set(config))
+    // Set the defaults values if there are any
+    for (let name in config.properties) {
+      const prop = config.properties[name]
+      const exists = this.get(config.name, name)
+      if (exists === undefined && "defaultValue" in prop) {
+        this.dispatch(
+          ConfigPropValues.set({
+            configName: config.name,
+            propName: name,
+            value: prop.defaultValue
+          })
+        )
+      }
+    }
   }
 }
